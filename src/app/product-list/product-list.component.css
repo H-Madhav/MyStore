@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.productsContainer {
+  width: 100%;
+  background-color: #fff;
+}
+
+.productsWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.list {
+  width: 30%;
+  min-height: 600px;
+  margin: 40px 10px;
+}
+
+.listImgHolder {
+  width: 100%;
+  height: 80%;
+  padding: 10px;
+  border: solid 1px #ccc;
+}
+
+.listImg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.listFooter {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 18px;
+  font-family: Verdana;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 10px;
+}
+
+.subTitle {
+  font-size: 16px;
+  font-family: Verdana;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+}
+
+.selectInput {
+  width: 100px;
+  height: 30px;
+  margin: 0;
+}
+
+.addBtn {
+  font-size: 14px;
+  font-family: Verdana;
+  color: #fff;
+  background-color: blue;
+  border: none;
+  height: 30px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  margin: 0;
+  width: 100px;
+}
+
+.footerFoot {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
