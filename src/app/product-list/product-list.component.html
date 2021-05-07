@@ -1,9 +1,11 @@
 <div class="productsContainer">
     <div class="productsWrapper">
         <div *ngFor="let product of products" class="list">
-            <div class="listImgHolder">
-                <img class="listImg" src="{{product.url}}" alt="product-icon" />
-            </div>
+            <a class="linkImg" [routerLink]="['/products',product.id]">
+                <div class="listImgHolder">
+                    <img class="listImg" src="{{product.url}}" alt="product-icon" />
+                </div>
+            </a>
             <div class="listFooter">
                 <h3 class="title">{{product.name}}</h3>
                 <h3 class="subTitle">{{product.price}} $</h3>

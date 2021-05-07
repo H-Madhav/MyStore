@@ -17,4 +17,5 @@ export class ProductDetailsComponent implements OnInit {
     this.product = this.productsService.getProducts().filter(product => product.id === parseInt(this.actRoute.snapshot.params.id))[0];
   }
 
+  
 }
