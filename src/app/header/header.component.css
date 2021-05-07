@@ -1,0 +1,35 @@
+.root {
+  width: 100%;
+  background-color: blue;
+  padding: 10px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.linkHolder {
+  max-width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 5px;
+}
+
+.linkBorder {
+  border-right: solid 1px #fff;
+}

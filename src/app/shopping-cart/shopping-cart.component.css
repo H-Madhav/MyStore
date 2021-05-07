@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .productsIncart {
@@ -82,4 +82,13 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.totalText {
+  font-size: 22px;
+  font-family: Verdana;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+  text-align: center;
+  margin: 20px 0;
 }
