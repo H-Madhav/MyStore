@@ -4,12 +4,14 @@ export class Product {
     price: number;
     url: string;
     description: string;
+    amount?: number
 
     constructor() {
-        this.id = 1;
-        this.name= '';
-        this.price= 0;
+        this.id = 1
+        this.name= ''
+        this.price= 0
         this.url = ''
         this.description = ''
+        this.amount=1
     }
 }

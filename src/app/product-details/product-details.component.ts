@@ -15,7 +15,9 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private actRoute: ActivatedRoute, private productsService: ProductsService) {}
 
   ngOnInit(): void {
-    this.product = this.productsService.getProducts().filter(product => product.id === parseInt(this.actRoute.snapshot.params.id))[0];
+    this.productsService.getProducts().subscribe(data => {
+      this.product = data.filter(product => product.id === parseInt(this.actRoute.snapshot.params.id))[0];
+    })
   }
 
   
