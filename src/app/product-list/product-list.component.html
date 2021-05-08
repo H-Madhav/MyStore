@@ -1,6 +1,6 @@
 <div class="productsContainer">
     <div class="productsWrapper">
-        <div *ngFor="let product of products" class="list">
+        <div *ngFor="let product of productsService.productsList" class="list">
             <a class="linkImg" [routerLink]="['/products',product.id]">
                 <div class="listImgHolder">
                     <img class="listImg" src="{{product.url}}" alt="product-icon" />

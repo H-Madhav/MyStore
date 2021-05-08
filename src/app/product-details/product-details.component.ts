@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {ProductsService} from '../services/products.service';
 import {Product} from '../models/Products';
 
@@ -10,15 +10,23 @@ import {Product} from '../models/Products';
 })
 export class ProductDetailsComponent implements OnInit {
   product_id: string = '1';
-  product: Product = new Product();
+  product: Product | undefined = undefined ;
 
-  constructor(private actRoute: ActivatedRoute, private productsService: ProductsService) {}
+  constructor(
+    private actRoute: ActivatedRoute,
+      private productsService: ProductsService,
+      private router: Router
+    ) {}
 
   ngOnInit(): void {
-    this.productsService.getProducts().subscribe(data => {
-      this.product = data.filter(product => product.id === parseInt(this.actRoute.snapshot.params.id))[0];
+    this.productsService.getDataById(parseInt(this.actRoute.snapshot.params.id)).then(data => {
+      if(!data) {
+        alert("product not found!")
+        this.router.navigate(['/'])
+      }else {
+        this.product = data
+      }
     })
   }
-
   
 }

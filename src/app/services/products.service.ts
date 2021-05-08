@@ -9,20 +9,37 @@ import {Product} from '../models/Products'
 })
 export class ProductsService {
 
+  productsList: Product[] = [];
   cartList: Product[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.getData()
+  }
 
 
   addToCart(product: Product): Product[] {
     return this.cartList;
   }
 
-  clearCart(): void {
-    this.cartList = [];
+  removeFromCart(id: number): void {
+    this.cartList.filter(item => item.id !== id);
   }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(".../../assets/data.json");
+  getProducts(): Product[] {
+    return this.productsList
   }
+
+  getData(): void {
+    this.http.get<Product[]>(".../../assets/data.json").subscribe(data => {
+      this.productsList = data;
+    })
+  }
+
+  getDataById(id: number): Promise <Product | undefined>  {
+    return this.http.get<Product[]>(".../../assets/data.json").toPromise()
+    .then(data => {
+     return data.find(item => item.id === id)
+    })
+  }
+
 }
