@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
+
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor() { }
+  constructor(public productsService: ProductsService) { }
 
   ngOnInit(): void {
+  }
+
+  getTotal() : string{
+    return this.productsService.cartList.reduce((acc, item) => {
+      return acc + item.price * item.amount
+    }, 0).toFixed(2) 
   }
 
 }

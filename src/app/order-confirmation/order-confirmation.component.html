@@ -1,11 +1,12 @@
 
 <div class="root">
-    <div class="wrapper">
-        <div class="successBox">
-            <h2 class="title">Success!</h2>
-            <p class="subTitle">You order <b>1000$</b> is confiremed!</p>
-            <p class="subTitle">Please allow 1-3 day(s) for shiping.</p>
-            <a class="link" routerLink="/">Back to product list</a>
-        </div>
+  <div class="wrapper">
+    <div class="successBox">
+      <h2 class="title">Success!</h2>
+      <p class="subTitle">Thank you <b>{{dataService.cartData.fullName}}</b></p>
+      <p class="subTitle">You order <b>{{dataService.cartData.amountTotal}}$</b> is confiremed!</p>
+      <p class="subTitle">Please allow 1-3 day(s) for shiping.</p>
+      <a class="link" routerLink="/">Back to product list</a>
     </div>
+  </div>
 </div>

@@ -10,13 +10,13 @@ import {Product} from '../models/Products';
 })
 export class ProductDetailsComponent implements OnInit {
   product_id: string = '1';
-  product: Product | undefined = undefined ;
+  product: Product = new Product() ;
 
   constructor(
     private actRoute: ActivatedRoute,
-      private productsService: ProductsService,
-      private router: Router
-    ) {}
+    public productsService: ProductsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.productsService.getDataById(parseInt(this.actRoute.snapshot.params.id)).then(data => {

@@ -103,3 +103,17 @@
   margin-top: 10px;
   cursor: pointer;
 }
+
+.emptyCart {
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyCartTitle {
+  color: blue;
+  font-size: 22px;
+  font-family: Verdana;
+}

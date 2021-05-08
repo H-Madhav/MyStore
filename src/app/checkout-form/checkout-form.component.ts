@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import {DataService} from '../services/data.service'
 
 @Component({
   selector: 'app-checkout-form',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutFormComponent implements OnInit {
 
-  constructor() { }
+  @Input() amountTotal: string = "0"
+
+  constructor(public dataService : DataService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  handleSubmit() {
+    this.dataService.cartData.amountTotal = this.amountTotal;
+    this.router.navigate(['/success'])
+  }
 }

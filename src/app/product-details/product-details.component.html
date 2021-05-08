@@ -1,25 +1,27 @@
-<div *ngIf="!product; else productsContainer">Loading...</div>
+<div class="loader" *ngIf="product.url === ''; else productsContainer">Loading...</div>
 
 <ng-template #productsContainer>
-    <div class="productsContainer"> 
-        <div class="wrapper">
-        <div class="productImgHolder">
-                <img class="productImg" src="{{product?.url}}" alt="product-img" />
-        </div>
-        <div class="details">
-            <h3 class="title">{{product?.name}}</h3>
-            <p class="subTitle">{{product?.price}}</p>
-            <p class="desc">{{product?.description}}</p>
-            <select class="selectInput" id="product-desc" name="product-desc">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            <button class="addBtn">Add to card</button>
-            <a class="link" routerLink="/">Back to product list</a>
-        </div>
-        </div>
+  <div class="productsContainer"> 
+    <div class="wrapper">
+      <div class="productImgHolder">
+        <img class="productImg" src="{{product.url}}" alt="product-img" />
+      </div>
+      <div class="details">
+        <h3 class="title">{{product.name}}</h3>
+        <p class="subTitle">{{product.price}}</p>
+        <p class="desc">{{product.description}}</p>
+        <select 
+            class="selectInput"
+            id="product-desc"
+            name="product-desc"
+            [(ngModel)]='product.qty'
+        >
+            <option  *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [ngValue]="i">{{i}}</option>
+        </select>
+          <button class="addBtn" (click)="productsService.addToCart(product, product.qty)">Add to card</button>
+          <a class="link" routerLink="/">Back to product list</a>
+      </div>
     </div>
+  </div>
 </ng-template>
 
