@@ -33,3 +33,15 @@
   padding: 10px;
   border-radius: 4px;
 }
+
+.disabledBtn {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-family: Verdana;
+  width: 100px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}

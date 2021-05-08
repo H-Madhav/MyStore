@@ -1,12 +1,48 @@
-<form>
-	<label class="label" for="fullname">Full Name</label>
-	<input class="input" type="text" id="fullname" name="fullname" placeholder="Full Name" [(ngModel)] = "dataService.cartData.fullName" />
+<form #form="ngForm">
+	<label class="label" for="fullname">Full Name*</label>
+	<input 
+    required
+    minlength="4"
+    class="input" 
+    type="text" 
+    id="fullname" 
+    name="fullname" 
+    placeholder="Full Name" 
+    [(ngModel)] = "dataService.cartData.fullName" 
+  />
 
-	<label  class="label"  for="address">Address</label>
-	<input class="input" type="text" id="address" name="address" placeholder="Address" [(ngModel)] = "dataService.cartData.address">
+	<label  class="label"  for="address">Address*</label>
+	<input 
+    required
+    minlength="4"
+    maxlength="50"
+    class="input" 
+    type="text" 
+    id="address" 
+    name="address" 
+    placeholder="Address" 
+    [(ngModel)] = "dataService.cartData.address"
+  />
 
 	<label  class="label"  for="creditcard">Credit Card</label>
-	<input class="input" type="number" id="creditcard" name="creditcard" placeholder="(16 digin number)" [(ngModel)] = "dataService.cartData.creditCard">
+	<input 
+    required
+    minlength="16"
+    maxlength="16"
+    class="input" 
+    type="text" 
+    id="creditcard" 
+    name="creditcard" 
+    placeholder="(16 digin number)" 
+    [(ngModel)] = "dataService.cartData.creditCard"
+  />
 
-	<button class="submitBtn" type="button" (click)='handleSubmit()'>Submit</button>
+  <button 
+    [ngClass]="{'submitBtn': form.valid, 'disabledBtn': form.invalid}"
+    type="button" 
+    (click)='handleSubmit()'
+    [disabled]="form.invalid"
+  >
+  Submit
+</button>
 </form>
