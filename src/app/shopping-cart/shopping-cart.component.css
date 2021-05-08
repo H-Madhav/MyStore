@@ -92,3 +92,14 @@
   text-align: center;
   margin: 20px 0;
 }
+
+.removeBtn {
+  background: transparent;
+  border: none;
+  color: blue;
+  font-size: 12px;
+  font-family: Verdana;
+  padding: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
