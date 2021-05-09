@@ -8,7 +8,7 @@ import { CartItem, Product } from '../models/Products';
 export class CartService {
   cartList: CartItem[] = [];
 
-  cartData: CartData = {
+  checkoutData: CartData = {
     fullName: '',
     address: '',
     creditCard: '',
@@ -30,6 +30,11 @@ export class CartService {
   removeFromCart(id: number): void {
     this.cartList = this.cartList.filter(item => item.id !== id);
     alert("Product removed from cart")
+  }
+
+  addCheckoutData(data: CartData): void {
+    this.checkoutData = data;
+    this.cartList = []
   }
 
 }
