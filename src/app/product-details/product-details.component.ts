@@ -12,6 +12,8 @@ import {Product} from '../models/Products';
 export class ProductDetailsComponent implements OnInit {
   product_id: string = '1';
   product: Product = new Product() ;
+  qty: number = 1;
+
 
   constructor(
     private actRoute: ActivatedRoute,
@@ -29,6 +31,10 @@ export class ProductDetailsComponent implements OnInit {
         this.product = {...data, qty: 1}
       }
     })
+  }
+
+  addToCart(): void {
+    this.cartService.addToCart(this.product, this.product.qty)
   }
   
 }
