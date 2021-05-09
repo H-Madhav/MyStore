@@ -28,6 +28,7 @@ export class ProductsService {
 
   removeFromCart(id: number): void {
     this.cartList = this.cartList.filter(item => item.id !== id);
+    alert("Product removed from cart")
   }
 
   getProducts(): Product[] {
@@ -36,7 +37,9 @@ export class ProductsService {
 
   getData(): void {
     this.http.get<Product[]>(".../../assets/data.json").subscribe(data => {
-      this.productsList = data
+      this.productsList = data.map(product => {
+        return {...product, qty: 1}
+      })
     })
   }
 

@@ -24,7 +24,7 @@ export class ProductDetailsComponent implements OnInit {
         alert("product not found!")
         this.router.navigate(['/'])
       }else {
-        this.product = data
+        this.product = {...data, qty: 1}
       }
     })
   }
