@@ -13,3 +13,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## About Project
+
+This project is an e-commerce website – an application that allows users to view a list of available products to purchase, know about all the description of product, add them to a shopping cart, remove from cart and ultimately complete the checkout process.
