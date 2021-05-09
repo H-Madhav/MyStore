@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-order-confirmation',
@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class OrderConfirmationComponent implements OnInit {
 
-  constructor(public dataService: DataService) { }
+  constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
   }

@@ -1,11 +1,11 @@
-<div class="emptyCart" *ngIf='productsService.cartList.length === 0'>
+<div class="emptyCart" *ngIf='cartService.cartList.length === 0'>
 	<h2 class="emptyCartTitle">Cart is Empty</h2>
 </div>
 
-<div *ngIf='productsService.cartList.length !== 0' class="root"> 
+<div *ngIf='cartService.cartList.length !== 0' class="root"> 
 	<div class="wrapper">
     <div class="productsIncart">
-      <div *ngFor="let product of productsService.cartList" class="cartItem">
+      <div *ngFor="let product of cartService.cartList" class="cartItem">
         <div class="imgHolder">
           <img class="img" src="{{product.url}}" alt='img' />
         </div>
@@ -16,7 +16,7 @@
             <p class="descText">Amount</p>
             <input min="1" class="selectInput" type="number" [(ngModel)] ="product.amount" />
           </div>
-          <button class="removeBtn" (click)="productsService.removeFromCart(product.id)">Remove</button>
+          <button class="removeBtn" (click)="cartService.removeFromCart(product.id)">Remove</button>
         </div>
       </div>
     </div>
