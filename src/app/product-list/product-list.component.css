@@ -1,22 +1,5 @@
-.productsContainer {
+.root {
   width: 100%;
-  background-color: #fff;
-}
-
-.productsWrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: #fff;
-}
-
-.list {
-  width: 30%;
-  min-height: 600px;
-  margin: 40px 10px;
 }
 
 .listImgHolder {
